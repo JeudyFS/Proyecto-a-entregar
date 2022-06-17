@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>San Vito Express</title>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div>
+            <figure>
+                <img src="img/logoSVE.PNG" width="100%" alt="">
+            </figure>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary md-12">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/home.png" alt="" width="48px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mision_vision.html">Misión & Visión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="contenedor">
+
+        <aside class="aside">
+
+            <h2>Somos San Vito Expres </h2><br>
+            
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat,
+                exercitationem impedit magnam perspiciatis harum corporis sequi? Aperiam beatae consequatur nostrum.</p>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            
+            <figure class="figure">
+                <img src="img/Conocenos.jpg">
+            </figure>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat,
+                exercitationem impedit magnam perspiciatis harum corporis sequi? Aperiam beatae consequatur nostrum.</p>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <figure class="figure">
+                <img src="img/san-vito.jpg">
+            </figure>
+            
+        </aside>
+        <main class="main">
+            <div class="md-12">
+                <form id="form" action="" method="post" class="form">
+                  <div class="mb-3">
+                    <label for="name">Nombre completo<span>*</span></label>
+                    <input type="text" name="name" id="name" required <div class="mb-3">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" name="email" id="email" required>
+                  </div>
+        
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje </label>
+                    <br>
+                    <textarea name="message" id="message" rows="10px" style="width: 100%"></textarea>
+                  </div>
+                  <input type="submit" value="Enviar">
+                </form>
+              </div>
+          
+        </main>
+
+    </div>
+    <footer class="footer">
+        <a class="btn" href="#header" title="Ir al inicio"><img src="img/home.png" alt="" width="48px"></a>
+        <a class="btn" href="#" title="Facebook"><img src="img/facebook.png" alt="" width="48px"></a>
+        <a class="btn" href="#" title="Instagram"><img src="img/instagram.png" alt="" width="48px"></a>
+        <a class="btn" href="https://wa.me/83804966?text=Hola!%20Estoy%20interesado%20en%20tu%20servicio" title="
+            Whatsapp" target="_blank"><img src="img/whatsapp.png" alt="" width="48px"></a>
+        <a class="btn" href="#" title="Youtube"><img src="img/youtube.png" alt="" width="48px"></a>
+    </footer>
+
+    <script>
+        const $form = document.querySelector('#form');
+        const $buttonMailto = document.querySelector('#btnEmail')
+    
+        $form.addEventListener('submit', handleSubmit)
+    
+        function handleSubmit(event) {
+          event.preventDefault()
+          const frmData = new FormData(this)
+          $buttonMailto.setAttribute('href', `mailto:servicio.de.mensajeria.sve@gmail.com?subject=Contacto.:  ${frmData.get('name')}   /  Email:${frmData.get('email')}&body=${frmData.get('message')} `)
+          $buttonMailto.click()
+        }
+      </script>
+</body>
+
+</html>
+
